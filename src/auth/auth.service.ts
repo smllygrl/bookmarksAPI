@@ -47,12 +47,9 @@ export class AuthService {
     if (!user) throw new ForbiddenException("We couldn't find that email");
 
     // compare passwords
-
     const pwMatches = await argon.verify(user.hash, dto.password);
-
-    if (!pwMatches) throw new ForbiddenException('Credentials incorrect');
-
     // if incorrect throw exception
+    if (!pwMatches) throw new ForbiddenException('Credentials incorrect');
 
     // send back the user
     delete user.hash;
