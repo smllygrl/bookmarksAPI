@@ -1,5 +1,5 @@
+import { PrismaService } from '../prisma/prisma.service';
 import { ForbiddenException, Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthDto } from './dto';
 import * as argon from 'argon2';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
@@ -58,10 +58,16 @@ export class AuthService {
     return this.signToken(user.id, user.email);
   }
 
-  // Because this function returns a promise, it is not asyn as it does not execute a promise
-  signToken(userId: number, email: string): Promise<string> {
+  async signToken(
+    userId: number,
+    email: string,
+  ): Promise<{ access_token: string }> {
     const payload = { sub: userId, email };
     const secret = this.config.get('JWT_SECRET');
-    return this.jwt.signAsync(payload, { expiresIn: '15m', secret });
+    const token = await this.jwt.signAsync(payload, {
+      expiresIn: '15m',
+      secret: secret,
+    });
+    return { access_token: token };
   }
 }
