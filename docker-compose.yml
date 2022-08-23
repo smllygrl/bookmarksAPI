@@ -1,6 +1,5 @@
 version: '3.8'
 services:
-
   dev-db:
     image: postgres:13
     ports:
@@ -11,9 +10,6 @@ services:
       POSTGRES_DB: nest
     networks:
     - freecodecamp
-networks:
-  freecodecamp:
-
   test-db:
     image: postgres:13
     ports:
