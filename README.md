@@ -26,6 +26,14 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Project
+
+Following [This](https://www.youtube.com/watch?v=GHTA143_b-s&t=11547s) YouTube tutorial, this project aims to build a library of bookmarks for specific users.
+
+Prisma is used as an ORM.
+
+JWT are used for user validation.
+
 ## Installation
 
 ```bash
