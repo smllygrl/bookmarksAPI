@@ -24,11 +24,13 @@
 
 ## Project
 
-Following [This](https://www.youtube.com/watch?v=GHTA143_b-s&t=11547s) YouTube tutorial, this project aims to build a library of bookmarks for specific users.
+Following [this](https://www.youtube.com/watch?v=GHTA143_b-s&t=11547s) YouTube tutorial, this project aims to build a library of bookmarks for specific users.
 
 Prisma is used as an ORM.
 
 JWT are used for user validation.
+
+I was attracted to Nest.JS as I wanted to be able to bolster my JavaScript and TypeScript competency to fulfill the needs of a 'Full Stack' in JS.
 
 ## Installation
 
